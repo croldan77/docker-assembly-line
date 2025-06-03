@@ -2,6 +2,14 @@ pipeline {
   agent none
 
   stages {
+    
+    stage('maven') {
+      agent { docker "maven" }
+      steps {
+        sh "mvn -version"
+        sh "java -version"
+      }
+    }
 
     stage('node') {
       agent { docker "node" }
