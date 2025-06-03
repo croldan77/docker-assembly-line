@@ -3,8 +3,10 @@ pipeline {
 
   stages {
     stage('maven') {
+      environment {
+            JAVA_HOME = "/usr/lib/jvm/java-17-openjdk/"
+        }
       steps {
-        sh "export $JAVA_HOME=/usr/lib/jvm/java-17-openjdk/"
         sh "mvn -version"
         sh "java -version"
       }
