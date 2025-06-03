@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker "maven:3.9.9-eclipse-temurin-24-noble" }
+  agent { docker "maven" }
 
   stages {
     stage('maven') {
